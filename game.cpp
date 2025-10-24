@@ -13,23 +13,12 @@ int rusificator(){
   return 0;
 }
 
-int game(){
-  return 0;
-}
+// int game() {
+//   return 0;
+// }
 
-int start() {
-  using namespace std;
-  cout << "Обращаться к ячейкам по следующей закономерности:" << endl;
-  cout << "a1 a2 a3" << endl << "a4 a5 a6" << endl << "a7 a8 a9" << endl;
-  game();
-  return 0;
-}
 
-int main() {
-  rusificator();
-  start();
-  return 0;
-}
+
 
 int turn() {
   std::cout << "Выберите, куда поставить " << (cross_or_zero == 1 ? ("O") : ("X")) <<
@@ -63,15 +52,14 @@ int game() {
   n = n + 1;
   if (n%2 == 1){
     cross_or_zero = 1;
+  }
   else
     cross_or_zero = -1;
-  }
-
   turn();
   return 0;
 }
 
-int print(){
+int print() {
   using namespace std;
   cout << a1 << " " << a2 << " " << a3 << endl;
   cout << a4 << " " << a5 << " " << a6 << endl;
@@ -79,3 +67,16 @@ int print(){
   //cout << endl << "Следующий игрок ставит " << (cross_or_zero > 0 ? ("O") : ("X")) << endl;
 }
 
+int start() {
+  using namespace std;
+  cout << "Обращаться к ячейкам по следующей закономерности:" << endl;
+  cout << "a1 a2 a3" << endl << "a4 a5 a6" << endl << "a7 a8 a9" << endl;
+  game();
+  return 0;
+}
+
+int main() {
+  rusificator();
+  start();
+  return 0;
+}
