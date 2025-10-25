@@ -51,37 +51,45 @@ int turn() {
   switch (choice) {
     case 1:
       a1 = cross_or_zero == 1 ? 1 : -1;
+      print();
       break;
     case 2:
       a2 = cross_or_zero == 1 ? 1 : -1;
+      print();
       break;
     case 3:
       a3 = cross_or_zero == 1 ? 1 : -1;
+      print();
       break;
     case 4:
       a4 = cross_or_zero == 1 ? 1 : -1;
+      print();
       break;
     case 5:
       a5 = cross_or_zero == 1 ? 1 : -1;
+      print();
       break;
     case 6:
       a6 = cross_or_zero == 1 ? 1 : -1;
+      print();
       break;
     case 7:
       a7 = cross_or_zero == 1 ? 1 : -1;
+      print();
       break;
     case 8:
       a8 = cross_or_zero == 1 ? 1 : -1;
+      print();
       break;
     case 9:
       a9 = cross_or_zero == 1 ? 1 : -1;
+      print();
       break;
     default:
       std::cout << "Неправильный ввод!" << std::endl;
       n = n - 1;
       turn();
   } 
-  print();
   win = calculate();
   return win;
 }
