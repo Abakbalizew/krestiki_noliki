@@ -22,7 +22,16 @@ int print() {
 }
 
 int calculate(){
-  return 0;
+  int win = 0;
+  if ((a1 + a2 + a3 == 3) or (a4 + a5 + a6 == 3) or (a7 + a8 + a9 == 3) or (a1 + a4 + a7 == 3) or\
+    (a2 + a5 + a8 == 3) or (a3 + a6 + a9 == 3) or (a1 + a5 + a9 == 3) or (a3 + a5 + a7 == 3))
+      win = 1;
+  else if ((a1 + a2 + a3 == -3) or (a4 + a5 + a6 == -3) or (a7 + a8 + a9 == -3) or (a1 + a4 + a7 == -3) or\
+    (a2 + a5 + a8 == -3) or (a3 + a6 + a9 == -3) or (a1 + a5 + a9 == -3) or (a3 + a5 + a7 == -3))
+      win = -1;
+  else
+    win = 0;
+  return win;
 }
 
 int turn() {
@@ -65,7 +74,7 @@ int turn() {
       a9 = cross_or_zero == 1 ? 1 : -1;
       break;
     default:
-      std::cout << "Неправильный ввод!" << endl;
+      std::cout << "Неправильный ввод!" << std::endl;
       n = n - 1;
       game()  
   } 
