@@ -66,15 +66,14 @@ int turn() {
     default:
       std::cout << "Неправильный ввод!" << endl;
       n = n - 1;
-      game()
-    calculate()
+      game()  
   } 
   print();
-  return 0;
+  return calculate();
 }
 
 int game() {
-  while(turn() != 1) {
+  while(turn() == 0) {
     n = n;
   }
 }
