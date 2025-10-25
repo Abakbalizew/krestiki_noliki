@@ -30,6 +30,8 @@ int calculate(){
   else if ((a1 + a2 + a3 == -3) or (a4 + a5 + a6 == -3) or (a7 + a8 + a9 == -3) or (a1 + a4 + a7 == -3) or\
     (a2 + a5 + a8 == -3) or (a3 + a6 + a9 == -3) or (a1 + a5 + a9 == -3) or (a3 + a5 + a7 == -3))
       win = -1;
+  else if (n == 9)
+    win = -2;
   else
     win = 0;
   return win;
@@ -90,21 +92,50 @@ int game() {
   }
   if (win == 1){
     std::cout << "Победили Нолики" << std::endl << "Если хотите рестартнуть игру, набери \"10\""<< std::endl;
-    return 0;
+    int res = 0;
+    std::cin >> res;
+    if (res == 10){
+      a1 = a2 = a3 = a4 = a5 = a6 = a7 = a8 = a9 = 0;
+      n = 0;
+      print();
+      game();
+    }
+    else {
+      std::cout << "КОНЕЦ ИГРЫ";
+      return 0;
+    }
+    //return 0;
 }
   else if (win == -1){
     std::cout << "Победили Крестики" << std::endl << "Если хотите рестартнуть игру, набери \"10\""<< std::endl;;
     int res = 0;
-    std::cin << res << std::endl;
-    if (res == 10)
+    std::cin >> res;
+    if (res == 10){
       a1 = a2 = a3 = a4 = a5 = a6 = a7 = a8 = a9 = 0;
       n = 0;
+      print();
       game();
-    else 
+    }
+    else {
       std::cout << "КОНЕЦ ИГРЫ";
       return 0;
+    }
   }
-  
+  else if (win == -2){
+    std::cout << "Ничья" << std::endl << "Если хотите рестартнуть игру, набери \"10\""<< std::endl;;
+    int res = 0;
+    std::cin >> res;
+    if (res == 10){
+      a1 = a2 = a3 = a4 = a5 = a6 = a7 = a8 = a9 = 0;
+      n = 0;
+      print();
+      game();
+    }
+    else {
+      std::cout << "КОНЕЦ ИГРЫ";
+      return 0;
+    }
+  }
 }
 
 int start() {
