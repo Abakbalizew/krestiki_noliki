@@ -7,6 +7,20 @@ int cross_or_zero = 1;
 int n = 0;
 int win = 0;
 //cross = -1, zero = 1
+int print();
+int neto();
+int to();
+int game();
+int start();
+int rusificator();
+int calculate();
+int turn();
+
+int main() {
+  rusificator();
+  start();
+  return 0;
+}
 
 int rusificator(){
   SetConsoleCP(1251);
@@ -17,9 +31,9 @@ int rusificator(){
 
 int print() {
   using namespace std;
-  cout << (a1 == 1 ? ("O") : ((a1 == -1 ? ("X") : ("a1")))) << " " << (a2 == 1 ? ("O") : ((a2 == -1 ? ("X") : ("a2")))) << " " << (a3 == 1 ? ("O") : ((a3 == -1 ? ("X") : ("a3")))) << endl;
-  cout << (a4 == 1 ? ("O") : ((a4 == -1 ? ("X") : ("a4")))) << " " << (a5 == 1 ? ("O") : ((a5 == -1 ? ("X") : ("a5")))) << " " << (a6 == 1 ? ("O") : ((a6 == -1 ? ("X") : ("a6")))) << endl;
-  cout << (a7 == 1 ? ("O") : ((a7 == -1 ? ("X") : ("a7")))) << " " << (a8 == 1 ? ("O") : ((a8 == -1 ? ("X") : ("a8")))) << " " << (a9 == 1 ? ("O") : ((a9 == -1 ? ("X") : ("a9")))) << endl;
+  cout << (a1 == 1 ? ("O") : ((a1 == -1 ? ("X") : ("_1")))) << " " << (a2 == 1 ? ("O") : ((a2 == -1 ? ("X") : ("_2")))) << " " << (a3 == 1 ? ("O") : ((a3 == -1 ? ("X") : ("_3")))) << endl;
+  cout << (a4 == 1 ? ("O") : ((a4 == -1 ? ("X") : ("_4")))) << " " << (a5 == 1 ? ("O") : ((a5 == -1 ? ("X") : ("_5")))) << " " << (a6 == 1 ? ("O") : ((a6 == -1 ? ("X") : ("_6")))) << endl;
+  cout << (a7 == 1 ? ("O") : ((a7 == -1 ? ("X") : ("_7")))) << " " << (a8 == 1 ? ("O") : ((a8 == -1 ? ("X") : ("_8")))) << " " << (a9 == 1 ? ("O") : ((a9 == -1 ? ("X") : ("_9")))) << endl;
 }
 
 int calculate(){
@@ -37,6 +51,21 @@ int calculate(){
   return win;
 }
 
+int lozh = 0;
+
+int neto(){
+  lozh += 1;
+  using namespace std;
+  cout << "Ќ≈Ћ№«я" << endl;
+  n = n - 1;
+  turn();
+  return 0;
+}
+
+int to(){
+  return (cross_or_zero == 1 ? 1 : -1);
+}
+
 int turn() {
   n = n + 1;
   if (n%2 == 1){
@@ -50,40 +79,67 @@ int turn() {
   std::cin >> choice;
   switch (choice) {
     case 1:
-      a1 = cross_or_zero == 1 ? 1 : -1;
-      print();
+      a1 = (a1 == 0) ? to() : neto();
+      if (lozh == 0)
+        print();
+      else 
+        lozh -= 1;
       break;
     case 2:
-      a2 = cross_or_zero == 1 ? 1 : -1;
-      print();
+      a2 = (a2 == 0) ? to() : neto();
+      if (lozh == 0)
+        print();
+      else 
+        lozh -= 1;
       break;
     case 3:
-      a3 = cross_or_zero == 1 ? 1 : -1;
-      print();
+      a3 = (a3 == 0) ? to() : neto();
+      if (lozh == 0)
+        print();
+      else 
+        lozh -= 1;
       break;
     case 4:
-      a4 = cross_or_zero == 1 ? 1 : -1;
-      print();
+      a4 = (a4 == 0) ? to() : neto();
+      if (lozh == 0)
+        print();
+      else 
+        lozh -= 1;
       break;
     case 5:
-      a5 = cross_or_zero == 1 ? 1 : -1;
-      print();
+      a5 = (a5 == 0) ? to() : neto();
+      if (lozh == 0)
+        print();
+      else 
+        lozh -= 1;
       break;
     case 6:
-      a6 = cross_or_zero == 1 ? 1 : -1;
-      print();
+      a6 = (a6 == 0) ? to() : neto();
+      if (lozh == 0)
+        print();
+      else 
+        lozh -= 1;
       break;
     case 7:
-      a7 = cross_or_zero == 1 ? 1 : -1;
-      print();
+      a7 = (a7 == 0) ? to() : neto();
+      if (lozh == 0)
+        print();
+      else 
+        lozh -= 1;
       break;
     case 8:
-      a8 = cross_or_zero == 1 ? 1 : -1;
-      print();
+      a8 = (a8 == 0) ? to() : neto();
+      if (lozh == 0)
+        print();
+      else 
+        lozh -= 1;
       break;
     case 9:
-      a9 = cross_or_zero == 1 ? 1 : -1;
-      print();
+      a9 = (a9 == 0) ? to() : neto();
+      if (lozh == 0)
+        print();
+      else 
+        lozh -= 1;
       break;
     default:
       std::cout << "Ќеправильный ввод!" << std::endl;
@@ -154,8 +210,3 @@ int start() {
   return 0;
 }
 
-int main() {
-  rusificator();
-  start();
-  return 0;
-}
