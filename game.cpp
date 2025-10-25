@@ -76,10 +76,10 @@ int turn() {
     default:
       std::cout << "Неправильный ввод!" << std::endl;
       n = n - 1;
-      game()  
+      turn();
   } 
   print();
-  win = calculate()
+  win = calculate();
   return win;
 }
 
@@ -87,12 +87,14 @@ int game() {
   while(turn() == 0) {
     n = n;
   }
-  if (win == 1)
+  if (win == 1){
     std::cout << "Победили Нолики" << std::endl;
     return 0;
-  else if (win == -1)
+}
+  else if (win == -1){
     std::cout << "Победили Крестики" << std::endl;
     return 0;
+  }
   
 }
 
