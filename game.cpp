@@ -4,6 +4,7 @@
 int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0, a6 = 0, a7 = 0, a8 = 0, a9 = 0;
 int cross_or_zero = 1;
 int n = 0;
+int win = 0;
 //cross = -1, zero = 1
 
 int rusificator(){
@@ -69,13 +70,21 @@ int turn() {
       game()  
   } 
   print();
-  return calculate();
+  win = calculate()
+  return win;
 }
 
 int game() {
   while(turn() == 0) {
     n = n;
   }
+  if (win == 1)
+    std::cout << "Победили Нолики" << std::endl;
+    return 0;
+  else if (win == -1)
+    std::cout << "Победили Крестики" << std::endl;
+    return 0;
+  
 }
 
 int start() {
