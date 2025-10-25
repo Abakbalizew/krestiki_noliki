@@ -13,63 +13,75 @@ int rusificator(){
   return 0;
 }
 
-// int game() {
-//   return 0;
-// }
+int print() {
+  using namespace std;
+  cout << (a1 == 1 ? ("O") : ((a1 == -1 ? ("X") : ("a1")))) << " " << (a2 == 1 ? ("O") : ((a2 == -1 ? ("X") : ("a2")))) << " " << (a3 == 1 ? ("O") : ((a3 == -1 ? ("X") : ("a3")))) << endl;
+  cout << (a4 == 1 ? ("O") : ((a4 == -1 ? ("X") : ("a4")))) << " " << (a5 == 1 ? ("O") : ((a5 == -1 ? ("X") : ("a5")))) << " " << (a6 == 1 ? ("O") : ((a6 == -1 ? ("X") : ("a6")))) << endl;
+  cout << (a7 == 1 ? ("O") : ((a7 == -1 ? ("X") : ("a7")))) << " " << (a8 == 1 ? ("O") : ((a8 == -1 ? ("X") : ("a8")))) << " " << (a9 == 1 ? ("O") : ((a9 == -1 ? ("X") : ("a9")))) << endl;
+}
 
-
-
-
-int turn() {
-  std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ, ÐºÑƒÐ´Ð° Ð¿Ð¾ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ " << (cross_or_zero == 1 ? ("O") : ("X")) <<
-  ", Ð¿Ñ€Ð¾ÑÑ‚Ð¾ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€!" << std::endl;
-  int choice;
-  std::cin >> choice;
-  switch (choice) {
-    case 1:
-      a1 = cross_or_zero == 1 ? 1 : -1;
-    case 2:
-      a2 = cross_or_zero == 1 ? 1 : -1;
-    case 3:
-      a3 = cross_or_zero == 1 ? 1 : -1;
-    case 4:
-      a4 = cross_or_zero == 1 ? 1 : -1;
-    case 5:
-      a5 = cross_or_zero == 1 ? 1 : -1;
-    case 6:
-      a6 = cross_or_zero == 1 ? 1 : -1;
-    case 7:
-      a7 = cross_or_zero == 1 ? 1 : -1;
-    case 8:
-      a8 = cross_or_zero == 1 ? 1 : -1;
-    case 9:
-      a9 = cross_or_zero == 1 ? 1 : -1;
-  } 
+int calculate(){
   return 0;
 }
 
-int game() {
+int turn() {
   n = n + 1;
   if (n%2 == 1){
     cross_or_zero = 1;
   }
   else
     cross_or_zero = -1;
-  turn();
+  std::cout << "Âûáåðèòå, êóäà ïîñòàâèòü " << (cross_or_zero == 1 ? ("O") : ("X")) <<
+  ", ïðîñòî ââåäèòå íîìåð!" << std::endl;
+  int choice;
+  std::cin >> choice;
+  switch (choice) {
+    case 1:
+      a1 = cross_or_zero == 1 ? 1 : -1;
+      break;
+    case 2:
+      a2 = cross_or_zero == 1 ? 1 : -1;
+      break;
+    case 3:
+      a3 = cross_or_zero == 1 ? 1 : -1;
+      break;
+    case 4:
+      a4 = cross_or_zero == 1 ? 1 : -1;
+      break;
+    case 5:
+      a5 = cross_or_zero == 1 ? 1 : -1;
+      break;
+    case 6:
+      a6 = cross_or_zero == 1 ? 1 : -1;
+      break;
+    case 7:
+      a7 = cross_or_zero == 1 ? 1 : -1;
+      break;
+    case 8:
+      a8 = cross_or_zero == 1 ? 1 : -1;
+      break;
+    case 9:
+      a9 = cross_or_zero == 1 ? 1 : -1;
+      break;
+    default:
+      std::cout << "Íåïðàâèëüíûé ââîä!" << endl;
+      n = n - 1;
+      game()
+    calculate()
+  } 
+  print();
   return 0;
 }
 
-int print() {
-  using namespace std;
-  cout << a1 << " " << a2 << " " << a3 << endl;
-  cout << a4 << " " << a5 << " " << a6 << endl;
-  cout << a7 << " " << a8 << " " << a9 << endl;
-  //cout << endl << "Ð¡Ð»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ Ð¸Ð³Ñ€Ð¾Ðº ÑÑ‚Ð°Ð²Ð¸Ñ‚ " << (cross_or_zero > 0 ? ("O") : ("X")) << endl;
+int game() {
+  while(turn() != 1) {
+    n = n;
+  }
 }
 
 int start() {
   using namespace std;
-  cout << "ÐžÐ±Ñ€Ð°Ñ‰Ð°Ñ‚ÑŒÑÑ Ðº ÑÑ‡ÐµÐ¹ÐºÐ°Ð¼ Ð¿Ð¾ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ¹ Ð·Ð°ÐºÐ¾Ð½Ð¾Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚Ð¸:" << endl;
+  cout << "Îáðàùàòüñÿ ê ÿ÷åéêàì ïî ñëåäóþùåé çàêîíîìåðíîñòè:" << endl;
   cout << "a1 a2 a3" << endl << "a4 a5 a6" << endl << "a7 a8 a9" << endl;
   game();
   return 0;
